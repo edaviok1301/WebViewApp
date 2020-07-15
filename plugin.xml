@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="webView" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+	<name>WebView</name>
+	<js-module name="WebView" src="www/WebView.js">
+		<clobbers target="cordova.plugins.WebView" />
+	</js-module>
+	<platform name="android">
+		<config-file parent="/*" target="res/xml/config.xml">
+			<feature name="WebView">
+				<param name="android-package" value="webView.WebView" />
+			</feature>
+		</config-file>
+		<config-file parent="/*" target="AndroidManifest.xml" />
+		<source-file src="src/android/WebView.java" target-dir="src/webView/WebView" />
+	</platform>
+	<platform name="ios">
+		<config-file parent="/*" target="config.xml">
+			<feature name="WebView">
+				<param name="ios-package" value="WebView" />
+			</feature>
+		</config-file>
+		<source-file src="src/ios/WebView.m" />
+	</platform>
+</plugin>
