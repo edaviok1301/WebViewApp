@@ -427,3 +427,4 @@ public class WebView extends CordovaPlugin {
             }
         });
     }
+}
